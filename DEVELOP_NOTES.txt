@@ -1,0 +1,127 @@
+( +: positive; -: negative; Chg: Change; <>: Explanation; Del: Delete; <#>: Index bugs; Imp: Improve )
+
+± <- AltGr + Shift + '9';
++ (Add, Fix)
+- (Bug, Del)
+± (Chg, Imp)
+ini_proy: 11/02/2019 h: ??:??
+last_mod: 25/02/2019 h: 23:02
+deadline: 01/03/2019 h: ??:??
+==========================================================================================================
+0.4: 0 bugs
+    + Add: Clock. // Into act_panel( );
+    + Add: Panel Turn. // Into act_panel( );
+    + Fix: Select pieces.
+    + Add: More atributes and methods in 'class Game'.
+        <> boolean one_is_pressed; int who; long clock_start;
+        <> act_pieces( ); act_panel; String time ( long ); exit ( int );
+0.5: 2 bugs
+    + Fix: Movement of King, Queen and Bioshop. // New Fix
+    + Add: Movement for all pieces ( only white ). // New Add
+    + Add: More atributes and methods in 'class Piece'.
+        <> int x_pos_tab, y_pos_tab, scale; set_pos_tab( int, int );
+    + Add: More atributes and methods in 'class Game'.
+        <> int who_x, who_y; act_board( );
+    ± Imp: Constructor of 'class Piece'.
+    ± Chg: Modifiers in 'class Square'
+        <> "private" -> "static" for Color( MOVE, SELECT, ATTACK )
+    ± Chg: Method in 'class Piece'.
+        <> "draw( int )" -> "draw( )"
+<0> - Bug: No add collision between pieces.
+<1> - Bug: If the piece goes out the board chess then crash the game. :D
+    + Add: Method in 'class Game'.
+        <> act_mouse( );
+0.6: 2 bugs
+    + Add: Now, pieces can only move in their 'move squares'.
+<2> - Bug: Rook, second, only move to last position of last piece moved.
+<1> + Fix: Bug#1, pieces cannot go out the board. :D
+    - Del: Method in 'class Game', because it isn't work and its function is implemented.
+        <> act_mouse( );
+    + Add: Method in 'class Piece'
+        <> String toString( );
+0.7: 2 bug
+<2> + Fix: Bug#2, the bug happen in method 'act_pieces( )'.
+        <> The loop that control who piece is moved.
+        <> That loop doesn't know if there is a piece to move.
+    + Add: Method & atribute in 'class Game'
+        <> int turns;
+        <> aux_pieces( );
+    ± Chg: Atribute in 'class Game'
+        <> tam_panel: "int" -> "double".
+    ± Imp: Methods in 'class Game'
+        <> aux_pieces( Piece[] );
+        <> act_pieces( ); // Black pieces can be moved.
+    + Add: Atributes & in 'class Game'
+        <> int HD = 700, FHD = 1040, QHD = 1360, UHD = 2000;
+        <> chg_turns( );
+<3> - Bug: The piece that you drag, if you let it in 'panel', the piece stack at 'panel'.
+    + Add: Atributes in 'class Piece'
+        <> char WHITE = 'w', BLACK = 'b';
+    ± Chg: Constructor of 'class Piece'.
+        <> "Piece( int, int, String, int )" -> "Piece( int, int, String, int, char )"
+<4> - Bug: Black pieces are moved seem White pieces.
+0.8: 1 bug
+<4> + Fix: Bug#4, the bug happen in method 'act_board( )'
+        <> Because in that only white pieces change board.
+    + Add: Method in 'class Game'
+        <> aux_board( Piece[] ); boolean is_pos_pieces( Piece[], int, int ); int what_piece( Piece[], int, int );
+    ± Chg: Atribute in 'class Square'
+        <> ATTACK = "new Color( 255, 100, 0 )" -> "new Color( 200, 0, 0 )"
+    ± Chg: Method in 'class Game'
+        <> "aux_board( Piece[] )" -> "aux_board( Piece[], Piece[] )"
+        <> "aux_pieces( Piece[] )" -> "aux_pieces( Piece[], Piece[] )"
+<0> + Fix: Bug#0, more or less improve the system of collision.
+<5> - Bug: No properly system of collision between pieces.
+    + Add: Pieces the same colour can't stay in the same square.
+    ± Imp: Method in 'class Game'.
+        <> aux_board( ); // Now, black pieces can move like black pieces.
+    + Add: Pieces with the different colour can't stay in the same square.
+    ± Chg: Method in 'class Piece'
+        <> boolean is_move( int, int ); // It has the same functionality, but with other funtions.
+    + Add: Methods in 'class Piece'
+        <> boolean beam_Diag_l( int, int ); boolean beam_Diag_r( int, int );
+        <> boolean beam_diag_l( int, int ); boolean beam_diag_r( int, int );
+        <> boolean beam_horz_l( int, int ); boolean beam_horz_r( int, int );
+        <> boolean beam_vert_u( int, int ); boolean beam_vert_d( int, int );
+        <> boolean beam_piece( int, int, char, char ); // By this method to be can access before methods.
+0.9: 0 bug
+    + Add: Atribute and methods in 'class Piece'
+        <> boolean first_move; boolean moved;
+        <> boolean is_first_move( ); chg_fisrt_move( boolean ); boolean is_moved( ); chg_moved( boolean );
+    ± Imp: Method in 'class Piece'
+        <> boolean is_move( int, int ); menu( );
+<6> - Bug: Pawns can 'eat' with their move.
+<6> + Fix: Bug#6, more or less improve the system of collision.
+    + Add: Methods in 'class Game'
+        <> boolean collision( Piece[], Piece[], int, int ); some_one_moved( Pieces[] ); set_all_moved( Pieces[], boolean );
+    ± Imp: Methods in 'class Game'
+        <> boolean collision( Piece[], Piece[], int, int ); aux_pieces( Pieces[],  Pieces[] )
+    + Fix: Turns start at 1.
+<5> + Fix: Bug#4, finally the game have a good system to collision between pieces.
+<7> - Bug: Pawns can go throught other piece in first move.
+<7> + Fix: Bug#7, all pieces move and collide correctly. // Coof, coof...
+<3> + Fix: Bug#3, the bug happened in 'chg_turns'.
+    + Add: Players can only one move in their turns.
+    + Add: Better 'squares'.
+    + Add: Piece drag is drown over of other pieces.
+    + Add: Only if the player moved a piece, he can change turn.
+    + Add: The game can display in your closer resolution.
+    + Add: Methods and atribute in 'class Chess'
+        <> int height;
+        <> int choose_res( ); text_graph( String ); pause( long );
+        <> boolean can_convert( String ); init_game( int, String[] )
+    
+    > Only a move per turn. Tip: Add a atribute in 'class Piece' boolean made_move = false;
+    > Loops in the part of collision change to functions.
+    - Add: king_alive( ); 
+
+Implemetations & other things.============================================================================
+< > ± Chg: The process of create of board.
+< > + Add: A camera to view the board in perspective.
+< > + Add: Random mode, extreme random mode, battle royale mode.
+        <> Random: Pieces are untidy, but in their colour.
+        <> Extreme Random: Pieces are untidy, so in part of white can stay a black piece.
+        <> Battle Royale: Player only move the king piece, other pieces have special functions, such as
+        <> walls, explosives and etc...
+==========================================================================================================
+// Hacer un programa especifico para esto...
