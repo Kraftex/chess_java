@@ -4,9 +4,8 @@
 + (Add, Fix)
 - (Bug, Del)
 ± (Chg, Imp)
-ini_proy: 11/02/2019 h: ??:??
-last_mod: 25/02/2019 h: 23:02
-deadline: 01/03/2019 h: ??:??
+ini_proy: 11/02/2019 h: 17:36
+last_mod: 24/03/2019 h: 18:10
 ==========================================================================================================
 0.4: 0 bugs
     + Add: Clock. // Into act_panel( );
@@ -15,7 +14,7 @@ deadline: 01/03/2019 h: ??:??
     + Add: More atributes and methods in 'class Game'.
         <> boolean one_is_pressed; int who; long clock_start;
         <> act_pieces( ); act_panel; String time ( long ); exit ( int );
-0.5: 2 bugs
+0.5: 2 bugs 
     + Fix: Movement of King, Queen and Bioshop. // New Fix
     + Add: Movement for all pieces ( only white ). // New Add
     + Add: More atributes and methods in 'class Piece'.
@@ -31,15 +30,14 @@ deadline: 01/03/2019 h: ??:??
 <1> - Bug: If the piece goes out the board chess then crash the game. :D
     + Add: Method in 'class Game'.
         <> act_mouse( );
-0.6: 2 bugs
+0.6: 3 bugs
     + Add: Now, pieces can only move in their 'move squares'.
 <2> - Bug: Rook, second, only move to last position of last piece moved.
-<1> + Fix: Bug#1, pieces cannot go out the board. :D
     - Del: Method in 'class Game', because it isn't work and its function is implemented.
         <> act_mouse( );
     + Add: Method in 'class Piece'
         <> String toString( );
-0.7: 2 bug
+0.6.2: 4 bugs
 <2> + Fix: Bug#2, the bug happen in method 'act_pieces( )'.
         <> The loop that control who piece is moved.
         <> That loop doesn't know if there is a piece to move.
@@ -60,7 +58,7 @@ deadline: 01/03/2019 h: ??:??
     ± Chg: Constructor of 'class Piece'.
         <> "Piece( int, int, String, int )" -> "Piece( int, int, String, int, char )"
 <4> - Bug: Black pieces are moved seem White pieces.
-0.8: 1 bug
+0.7: 3 bug
 <4> + Fix: Bug#4, the bug happen in method 'act_board( )'
         <> Because in that only white pieces change board.
     + Add: Method in 'class Game'
@@ -84,7 +82,7 @@ deadline: 01/03/2019 h: ??:??
         <> boolean beam_horz_l( int, int ); boolean beam_horz_r( int, int );
         <> boolean beam_vert_u( int, int ); boolean beam_vert_d( int, int );
         <> boolean beam_piece( int, int, char, char ); // By this method to be can access before methods.
-0.9: 0 bug
+0.8: 0 bug
     + Add: Atribute and methods in 'class Piece'
         <> boolean first_move; boolean moved;
         <> boolean is_first_move( ); chg_fisrt_move( boolean ); boolean is_moved( ); chg_moved( boolean );
@@ -93,7 +91,8 @@ deadline: 01/03/2019 h: ??:??
 <6> - Bug: Pawns can 'eat' with their move.
 <6> + Fix: Bug#6, more or less improve the system of collision.
     + Add: Methods in 'class Game'
-        <> boolean collision( Piece[], Piece[], int, int ); some_one_moved( Pieces[] ); set_all_moved( Pieces[], boolean );
+        <> boolean collision( Piece[], Piece[], int, int ); some_one_moved( Pieces[] );
+        <> set_all_moved( Pieces[], boolean ); swap_to_last( int, Pieces[] );
     ± Imp: Methods in 'class Game'
         <> boolean collision( Piece[], Piece[], int, int ); aux_pieces( Pieces[],  Pieces[] )
     + Fix: Turns start at 1.
@@ -102,19 +101,31 @@ deadline: 01/03/2019 h: ??:??
 <7> + Fix: Bug#7, all pieces move and collide correctly. // Coof, coof...
 <3> + Fix: Bug#3, the bug happened in 'chg_turns'.
     + Add: Players can only one move in their turns.
+<1> + Fix: Bug#1, pieces cannot go out the board. :D
+JAR + Add: 'App/Chess_alpha_1.jar'.
     + Add: Better 'squares'.
     + Add: Piece drag is drown over of other pieces.
     + Add: Only if the player moved a piece, he can change turn.
+JAR + Add: 'App/Chess_alpha_2.jar'.
     + Add: The game can display in your closer resolution.
-    + Add: Methods and atribute in 'class Chess'
+    + Add: Functions and variable in 'class Chess'
         <> int height;
         <> int choose_res( ); text_graph( String ); pause( long );
-        <> boolean can_convert( String ); init_game( int, String[] )
-    
-    > Only a move per turn. Tip: Add a atribute in 'class Piece' boolean made_move = false;
+        <> boolean can_convert( String ); init_game( int, String[] );
+0.9: 0 bug
+    + Add: Function in 'class Chess'
+        <> String whatOS( );
+    + Add: Atribute in 'class Game'
+        <> String os;
+    ± Add: Method and atribute in 'class Piece' and 'class Square'
+        <> String os;
+        <> set_os( String );
+Next implementations.===================================================================================== 
     > Loops in the part of collision change to functions.
-    - Add: king_alive( ); 
-
+    - Add: Menu, with GUI.
+    - Add: Textures packs.
+    - Add: king_alive( );
+    - Add: isCheckedKing( );
 Implemetations & other things.============================================================================
 < > ± Chg: The process of create of board.
 < > + Add: A camera to view the board in perspective.
