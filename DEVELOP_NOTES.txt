@@ -116,16 +116,17 @@ JAR + Add: 'App/Chess_alpha_2.jar'.
     + Add: Function in 'class Chess'
         <> String whatOS( );
     + Add: Atribute in 'class Game'
-        <> String os;
+        <> String os, texturePack;
     ± Add: Method and atribute in 'class Piece' and 'class Square'
-        <> String os;
-        <> set_os( String );
+        <> String os, texturePack;
+        <> set_os( String ), set_texturePack( String );
 Next implementations.===================================================================================== 
     > Loops in the part of collision change to functions.
     - Add: Menu, with GUI.
     - Add: Textures packs.
     - Add: king_alive( );
     - Add: isCheckedKing( );
+    > If in the texture pack especify don't find the image to load, load to 'classic' texture pack.
 Implemetations & other things.============================================================================
 < > ± Chg: The process of create of board.
 < > + Add: A camera to view the board in perspective.
