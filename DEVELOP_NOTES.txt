@@ -124,6 +124,7 @@ JAR + Add: 'App/Chess_alpha_2.jar'.
     ± Chg: Method in 'class Game'
         <> "exit( int )" -> "option( )"
     + Add: Now, the turns change before doing a move
+JAR + Add: 'App/Chess_alpha_3.jar'.
 Next implementations.===================================================================================== 
     > Loops in the part of collision change to functions.
     - Add: Menu, with GUI.
