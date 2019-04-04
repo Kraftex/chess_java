@@ -119,7 +119,11 @@ JAR + Add: 'App/Chess_alpha_2.jar'.
         <> String os, texturePack;
     ± Add: Method and atribute in 'class Piece' and 'class Square'
         <> String os, texturePack;
-        <> set_os( String ), set_texturePack( String );
+        <> set_os( String ), setTexturePack( String );
+    ± Chg: Name of 'class Square' -> 'class Tile'
+    ± Chg: Method in 'class Game'
+        <> "exit( int )" -> "option( )"
+    + Add: Now, the turns change before doing a move
 Next implementations.===================================================================================== 
     > Loops in the part of collision change to functions.
     - Add: Menu, with GUI.
