@@ -6,4 +6,4 @@
 
 <p><code> java -jar Chess_alpha_3.java RESOLUTION </code></p>
 
-Where <code>RESOLUTION</code> it's a number more than 200, and represents the pixels of the side board.
+Where <code>RESOLUTION</code> it's a number more than 200, and represents the pixels of the left side of the board.
