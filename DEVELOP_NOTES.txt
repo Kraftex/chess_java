@@ -127,6 +127,8 @@ JAR + Add: 'App/Chess_alpha_2.jar'.
 JAR + Add: 'App/Chess_alpha_3.jar'.
     ± Imp: Method in 'class Chess'
         <> init_game( int, String[] );
+    ± Fix: Problem with paths in Windows.
+JAR + Add: 'App/Chess_alpha_4.jar'.
 Next implementations.===================================================================================== 
     > Loops in the part of collision change to functions.
     - Add: Menu, with GUI.
@@ -138,10 +140,11 @@ Implemetations & other things.==================================================
 < > ± Chg: The process of create of board.
 < > + Add: A camera to view the board in perspective.
 < > + Add: Last one mode, random mode, extreme random mode, battle royale mode.
-        <> Last one: 
+        <> Last one: The game continue until the last piece in game is alive.
         <> Random: Pieces are untidy, but in their colour.
         <> Extreme Random: Pieces are untidy, so in part of white can stay a black piece.
+           Throwing a dice to decide who starts.
         <> Battle Royale: Player only move the king piece, other pieces have special functions, such as
-        <> walls, explosives and etc...
+           walls, explosives and etc...
 ==========================================================================================================
 // Hacer un programa especifico para esto...
