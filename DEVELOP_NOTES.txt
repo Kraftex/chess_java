@@ -11,15 +11,15 @@ last_mod: 08/04/2019 h: 10:43
     + Add: Clock. // Into act_panel( );
     + Add: Panel Turn. // Into act_panel( );
     + Fix: Select pieces.
-    + Add: More atributes and methods in 'class Game'.
+    + Add: More attributes and methods in 'class Game'.
         <> boolean one_is_pressed; int who; long clock_start;
         <> act_pieces( ); act_panel; String time ( long ); exit ( int );
 0.5: 2 bugs 
     + Fix: Movement of King, Queen and Bioshop. // New Fix
     + Add: Movement for all pieces ( only white ). // New Add
-    + Add: More atributes and methods in 'class Piece'.
+    + Add: More attributes and methods in 'class Piece'.
         <> int x_pos_tab, y_pos_tab, scale; set_pos_tab( int, int );
-    + Add: More atributes and methods in 'class Game'.
+    + Add: More attributes and methods in 'class Game'.
         <> int who_x, who_y; act_board( );
     ± Imp: Constructor of 'class Piece'.
     ± Chg: Modifiers in 'class Square'
@@ -41,19 +41,19 @@ last_mod: 08/04/2019 h: 10:43
 <2> + Fix: Bug#2, the bug happen in method 'act_pieces( )'.
         <> The loop that control who piece is moved.
         <> That loop doesn't know if there is a piece to move.
-    + Add: Method & atribute in 'class Game'
+    + Add: Method & attribute in 'class Game'
         <> int turns;
         <> aux_pieces( );
-    ± Chg: Atribute in 'class Game'
+    ± Chg: Attribute in 'class Game'
         <> tam_panel: "int" -> "double".
     ± Imp: Methods in 'class Game'
         <> aux_pieces( Piece[] );
         <> act_pieces( ); // Black pieces can be moved.
-    + Add: Atributes & in 'class Game'
+    + Add: Attributes & in 'class Game'
         <> int HD = 700, FHD = 1040, QHD = 1360, UHD = 2000;
         <> chg_turns( );
 <3> - Bug: The piece that you drag, if you let it in 'panel', the piece stack at 'panel'.
-    + Add: Atributes in 'class Piece'
+    + Add: Attributes in 'class Piece'
         <> char WHITE = 'w', BLACK = 'b';
     ± Chg: Constructor of 'class Piece'.
         <> "Piece( int, int, String, int )" -> "Piece( int, int, String, int, char )"
@@ -63,7 +63,7 @@ last_mod: 08/04/2019 h: 10:43
         <> Because in that only white pieces change board.
     + Add: Method in 'class Game'
         <> aux_board( Piece[] ); boolean is_pos_pieces( Piece[], int, int ); int what_piece( Piece[], int, int );
-    ± Chg: Atribute in 'class Square'
+    ± Chg: Attribute in 'class Square'
         <> ATTACK = "new Color( 255, 100, 0 )" -> "new Color( 200, 0, 0 )"
     ± Chg: Method in 'class Game'
         <> "aux_board( Piece[] )" -> "aux_board( Piece[], Piece[] )"
@@ -83,7 +83,7 @@ last_mod: 08/04/2019 h: 10:43
         <> boolean beam_vert_u( int, int ); boolean beam_vert_d( int, int );
         <> boolean beam_piece( int, int, char, char ); // By this method to be can access before methods.
 0.8: 0 bug
-    + Add: Atribute and methods in 'class Piece'
+    + Add: Attribute and methods in 'class Piece'
         <> boolean first_move; boolean moved;
         <> boolean is_first_move( ); chg_fisrt_move( boolean ); boolean is_moved( ); chg_moved( boolean );
     ± Imp: Method in 'class Piece'
@@ -115,9 +115,9 @@ JAR + Add: 'App/Chess_alpha_2.jar'.
 0.9: 0 bug
     + Add: Function in 'class Chess'
         <> String whatOS( );
-    + Add: Atribute in 'class Game'
+    + Add: Attribute in 'class Game'
         <> String os, texturePack;
-    ± Add: Method and atribute in 'class Piece' and 'class Square'
+    ± Add: Method and attribute in 'class Piece' and 'class Square'
         <> String os, texturePack;
         <> set_os( String ), setTexturePack( String );
     ± Chg: Name of 'class Square' -> 'class Tile'
@@ -129,6 +129,17 @@ JAR + Add: 'App/Chess_alpha_3.jar'.
         <> init_game( int, String[] );
     ± Fix: Problem with paths in Windows.
 JAR + Add: 'App/Chess_alpha_4.jar'.
+    ± Chg: Method in 'class Chess'
+        <> init_game( int, String[] ); // Preparing for 'class Menu'
+    - Del: Method in 'class Chess', because it doesn't have meaning.
+        <> String whatOS( );
+    - Del: Attribute & method in 'class Tile' and 'class Piece',  because it doesn't have meaning.
+        <> String os;
+        <> set_os( String );
+    - Del: Attribute in 'class Game'
+        <> String os;
+    + Add: Constructor in 'class Game'
+        <> Game( String, String, int, String, int );
 Next implementations.===================================================================================== 
     > Loops in the part of collision change to functions.
     - Add: Menu, with GUI.
